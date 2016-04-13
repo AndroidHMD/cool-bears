@@ -95,7 +95,9 @@ public class TransitionManager : MonoBehaviour
                 ActivateDatasets(true);
             }
 
+
             MixedRealityController.Instance.SetMode(mCurrentMode);
+            Application.targetFrameRate = 60;
             UpdateVisibleObjects();
         }
 
