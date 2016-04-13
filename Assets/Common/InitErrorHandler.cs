@@ -37,6 +37,8 @@ public class InitErrorHandler : MonoBehaviour
     {
         if (error != VuforiaUnity.InitError.INIT_SUCCESS)
         {
+			Cardboard.SDK.VRModeEnabled = false;
+			Cardboard.SDK.DistortionCorrection = Cardboard.DistortionCorrectionMethod.None;
             ShowErrorMessage(error);
         }
     }
