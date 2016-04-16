@@ -2,12 +2,12 @@ using UnityEngine;
 using System.Collections;
 
 public class EnemyControl : MonoBehaviour {
-    float moveSpeed;
+    public float moveSpeed;
     //public GameObject player;
     public Transform target;
 
     void Start () {
- 	     moveSpeed = 0.1f;
+ 	     //moveSpeed = 0.1f;
  	     //player = GameObject.Find("Main Camera");
 	}
 
@@ -19,6 +19,7 @@ public class EnemyControl : MonoBehaviour {
 	    transform.LookAt(target.position);
 	    float step = moveSpeed * Time.deltaTime;
 	    transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+	    transform.position = new Vector3(transform.position.x, 0, transform.position.z);
 	    //transform.position = new Vector3(transform.position.x, transform.position.y - moveSpeed * Time.deltaTime);
 
 	    //transform.position = position;
